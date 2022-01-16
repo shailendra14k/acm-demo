@@ -1,0 +1,28 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: frontend-app
+  namespace: frontend
+  labels: 
+    app: frontend 
+    version: v6.0
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: frontend 
+  template: 
+    metadata: 
+      labels: 
+        app: frontend
+        version: v6.0
+    spec: 
+      containers: 
+      - name: backend 
+        image: quay.io/shailendra14k/frontend:6.0
+        imagePullPolicy: Always 
+        ports: 
+        - containerPort: 8180
+        env:
+        - name: backendapp
+          value: backendservice.backend.svc.cluster.local:80/backend

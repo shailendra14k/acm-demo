@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: frontend
+  namespace: frontend
+spec:
+  host: frontend.apps.shailendra.techbeaker.com
+  path: /frontend
+  port:
+    targetPort: 8180
+  to:
+    kind: Service
+    name: frontendservice
+    weight: 100
