@@ -25,4 +25,4 @@ spec:
         - containerPort: 8180
         env:
         - name: backendapp
-          value: backendservice.backend.svc.cluster.local:80/backend
+          value: backendservice.backend.svc.clusterset.local:80/backend
