@@ -1,0 +1,28 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: backend-app
+  namespace: backend
+  labels: 
+    app: backend 
+    version: v6.0
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: backend 
+  template: 
+    metadata: 
+      labels: 
+        app: backend
+        version: v6.0
+    spec: 
+      containers: 
+      - name: backend 
+        image: quay.io/shailendra14k/backend:6.0
+        imagePullPolicy: Always 
+        ports: 
+        - containerPort: 8180
+        env:
+        - name: ClusterName
+          value: Cluster10(Azure)
