@@ -1,11 +1,8 @@
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
 metadata:
-  name: advanced-cluster-management
+  name: open-cluster-management-og
   namespace: open-cluster-management
 spec:
-  channel: release-2.4
-  installPlanApproval: Automatic
-  name: advanced-cluster-management
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
+  targetNamespaces:
+  - open-cluster-management
