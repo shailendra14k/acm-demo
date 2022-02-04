@@ -5,3 +5,4 @@ resources:
   - 02-operatorgroup.yaml
   - 03-acm-operator-sub.yaml
   - 04-multiclusterhub.yaml
+  - 05-infrastructure-env.yaml
